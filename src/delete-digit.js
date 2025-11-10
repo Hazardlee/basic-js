@@ -11,9 +11,17 @@ const { NotImplementedError } = require('../lib');
  * For n = 152, the output should be 52
  *
  */
-function deleteDigit(/* n */) {
-  // Remove line below and write your code here
-  throw new NotImplementedError('Not implemented');
+function deleteDigit(n) {
+  let string = String(n)
+  let array = string.split('')
+  let sum = 0
+  for (let i = 0; i < array.length; i++) {
+    let number = array.filter((_, j) => j !== i); 
+    if (sum < Number(number.join(''))) {
+      sum = Number(number.join(''))
+    }
+  }
+  return sum
 }
 
 module.exports = {
